@@ -44,6 +44,21 @@ nav {
     border: 0px;
     outline: none;
 }
+.search-results{
+    position: absolute;
+    right: 30px;
+    padding: 10px 20px;
+    top: 100px;
+    overflow: auto;
+    max-height: 400px;
+    width: 400px;
+    background-color: rgb(107, 107, 107);
+}
+.search-results img {
+    width: 150px;
+    height: 65px;
+    padding: 10px;
+}
 .nav-bar{
     display: flex;
     justify-content: center;
@@ -75,10 +90,10 @@ form{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 40%;
+    top: 25%;
     left: 45%;
 }
-form input{
+form input, form textarea{
     margin-bottom: 20px;
     padding: 10px; 
 }
