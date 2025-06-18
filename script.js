@@ -7,40 +7,11 @@ const contactLink = document.querySelector('.contact-page-link');
 homeLink.addEventListener('click', ()=>{
     pageElem.innerHTML = `
     <div class="hero">
-            <h1>Travel Your Dreams</h1>
-            <p>Travel Your Dreams is a website which provides recommendations for best places to travel.</p>
-            <div>Best Places For Your Travel <button class="hero-button explore-link" onclick="explorePage()">Explore</button></div>
-        </div>
-        <div>
-            <h2>Recommendations for Beaches</h2>
-            <h2>The ABC Beach</h2>
-            <div>
-                <img src="images/beach pic1.jpg" alt="beach-pic1">
-                <img src="images/beach pic2.jpg" alt="beach-pic2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur officia perspiciatis necessitatibus, labore impedit praesentium dolores, deserunt voluptates repellat veniam nihil commodi. Consequatur, neque accusantium distinctio officia tempore corporis dolorum.</p>
-            </div>
-            <h2>Siesta Beach, Florida</h2>
-            <div>
-                <img src="images/siesta key beach pic1.jpg" alt="siesta-beach">
-                <img src="images/siesta key beach pic2.jpeg" alt="siesta-beach2">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tenetur. Assumenda quasi provident nam ex rerum dolorum blanditiis odio placeat atque obcaecati doloremque, hic modi consequatur incidunt officia neque. Eaque!</p>
-            </div>
-        </div>
-        <div>
-            <h2>Recommendations for Temples</h2>
-            <h2>The Somnath Temple, India</h2>
-            <div>
-                <img src="images/Somanath_Temple.jpg" alt="Somanath_Temple">
-                <img src="images/Somnath-Temple.jpg" alt="Somanath_Temple">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur officia perspiciatis necessitatibus, labore impedit praesentium dolores, deserunt voluptates repellat veniam nihil commodi. Consequatur, neque accusantium distinctio officia tempore corporis dolorum.</p>
-            </div>
-            <h2>The Golden Temple, India</h2>
-            <div>
-                <img src="images/golden temple 1.jpg" alt="golden-temple">
-                <img src="images/golden temple 2.jpg" alt="golden-temple">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tenetur. Assumenda quasi provident nam ex rerum dolorum blanditiis odio placeat atque obcaecati doloremque, hic modi consequatur incidunt officia neque. Eaque!</p>
-            </div>
-        </div>
+        <h1>Travel Your Dreams</h1>
+        <p>Travel Your Dreams is a website which provides recommendations for best places to travel.</p>
+        <div>Best Places For Your Travel <button class="hero-button explore-link" onclick="explorePage()">Explore</button></div>
+    </div>
+        
     `
 });
 
@@ -141,3 +112,53 @@ function explorePage() {
     </div>
         `
 }
+
+document.querySelector(".search-clr").addEventListener('click', ()=>{
+    document.querySelector(".search-bar").value = "";
+    document.querySelector(".search-results").style.display = "none";
+})
+
+document.querySelector(".search-bar").addEventListener('change', ()=>{
+    let searchValue = document.querySelector(".search-bar").value;
+    document.querySelector(".search-results").style.display = "block";
+    if ("beach" === String(searchValue).toLowerCase()) {
+        document.querySelector(".search-results").innerHTML = `
+        <div>
+            <h2>Recommendations for Beaches</h2>
+            <h2>The ABC Beach</h2>
+            <div>
+                <img src="images/beach pic1.jpg" alt="beach-pic1">
+                <img src="images/beach pic2.jpg" alt="beach-pic2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur officia perspiciatis necessitatibus, labore impedit praesentium dolores, deserunt voluptates repellat veniam nihil commodi. Consequatur, neque accusantium distinctio officia tempore corporis dolorum.</p>
+            </div>
+            <h2>Siesta Beach, Florida</h2>
+            <div>
+                <img src="images/siesta key beach pic1.jpg" alt="siesta-beach">
+                <img src="images/siesta key beach pic2.jpeg" alt="siesta-beach2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tenetur. Assumenda quasi provident nam ex rerum dolorum blanditiis odio placeat atque obcaecati doloremque, hic modi consequatur incidunt officia neque. Eaque!</p>
+            </div>
+        </div>
+        `
+    } else if ("temple" === String(searchValue).toLowerCase()) {
+        document.querySelector(".search-results").innerHTML = `
+        <div>
+            <h2>Recommendations for Temples</h2>
+            <h2>The Somnath Temple, India</h2>
+            <div>
+                <img src="images/Somanath_Temple.jpg" alt="Somanath_Temple">
+                <img src="images/Somnath-Temple.jpg" alt="Somanath_Temple">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur officia perspiciatis necessitatibus, labore impedit praesentium dolores, deserunt voluptates repellat veniam nihil commodi. Consequatur, neque accusantium distinctio officia tempore corporis dolorum.</p>
+            </div>
+            <h2>The Golden Temple, India</h2>
+            <div>
+                <img src="images/golden temple 1.jpg" alt="golden-temple">
+                <img src="images/golden temple 2.jpg" alt="golden-temple">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tenetur. Assumenda quasi provident nam ex rerum dolorum blanditiis odio placeat atque obcaecati doloremque, hic modi consequatur incidunt officia neque. Eaque!</p>
+            </div>
+        `
+    } else {
+        document.querySelector(".search-results").innerHTML = `
+        <p> No search results found </p>
+        `
+    }
+})
