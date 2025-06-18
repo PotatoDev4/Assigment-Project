@@ -65,7 +65,7 @@ contactLink.addEventListener('click', ()=>{
         <label for="email">E-mail</label>
         <input type="email" name="email" id="email" placeholder="E-mail" required>
         <label for="message">Message</label>
-        <input type="text" name="message" id="message" placeholder="message" required>
+        <textarea name="message" id="message" cols="30" rows="5" placeholder="type your message" required></textarea>
         <input type="button" value="Send">
     </form>
     `
